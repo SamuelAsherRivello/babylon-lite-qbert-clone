@@ -4,6 +4,34 @@
 
 A complete browser arcade game inspired by Q*bert, rebuilt as an original metal machine. Hop across a 28-tile pyramid, turn every top amber, dodge enemies and ride rescue discs back to the summit. Rendered with **Babylon Lite and WebGPU** in a fixed 9:16 portrait cabinet, surrounded by original metallic artwork.
 
+## Original AI Prompt
+
+<details>
+<summary>Read the full original prompt (edited for clarity)</summary>
+
+Use this [repository template](https://github.com/SamuelAsherRivello/github-repository-template) to create a new GitHub repository called `babylon-lite-qbert-clone`, with the project name `qbert-clone` in the repository and the display name **Qbert Clone** in text.
+
+Use the **Babylon Lite** engine specifically to create a browser game using **WebGPU**. The game must have a **portrait aspect ratio**, with new, original artwork in the borders and gutters. The aspect ratio and gutters can draw inspiration from [this project](https://github.com/SamuelAsherRivello/babylon-light-stealth-grid).
+
+Import the skills from the [AI Skills Library](https://github.com/SamuelAsherRivello/ai-skills-library), then use `$explore` followed by `$propose` to create a complete game with the following requirements:
+
+- The character uses an onscreen virtual controller, WASD, and the arrow keys to walk around a 2D side-view level.
+- The level fits on one screen, with no scrolling.
+- The game must be a faithful clone of [Q*bert](https://en.wikipedia.org/wiki/Q*bert).
+- The rendering style must feature realistic metal, drawing inspiration from [these shiny, futuristic metal stairs](https://www.google.com/search?q=shiney+metal+stairs+future&num=10&sca_esv=080dae4805299e94&udm=2&biw=1264&bih=656&sxsrf=APpeQnuWS_gA-OGxxoBE7alDyS82Y5KuVA%3A1790590124772&ei=rDy6at2_Lr-Hxc8P1Z7r-Ak&ved=2ahUKEwjdxcyChJGXAxW_Q_EDHVXPGp8Q4dUDegQIBhAN&uact=5&oq=shiney+metal+stairs+future&gs_lp=Egtnd3Mtd2l6LWltZyIac2hpbmV5IG1ldGFsIHN0YWlycyBmdXR1cmVIiD1QAFjbO3AFeACQAQGYAZgBoAHFIKoBBDAuMze4AQPIAQD4AQGYAgmgAtoIwgIHECMYyQIYJ8ICCxAAGIAEGIoFGLEDwgIOEAAYgAQYigUYsQMYgwHCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIKEAAYgAQYigUYQ8ICDRAAGIAEGIoFGEMYsQPCAgUQABiABMICBxAAGIAEGArCAgkQABiABBgKGAuYAwCSBwMwLjmgB4M7sgcDMC45uAfaCMIHAzAuOcgHE4AIAQ&sclient=gws-wiz-img).
+
+Do not ask me any questions. Keep working until the project is on GitHub, released, published to GitHub Pages with a live demo link, and playable in the browser.
+
+This ChatGPT thread points to a local folder intended to be your new working directory. When you are done, the project must exist as a local copy with no uncommitted changes, and the full code must be on GitHub.
+
+Use the [GitHub connector](app://connector_76869538009648d5b282a4bb21c3d157).
+
+</details>
+
+- **Completion time:** 30 minutes, 18 seconds of recorded goal time for the original build, release, and verification.
+- **AI model:** OpenAI GPT-6 Astra (`gpt-6-astra`), running in Codex.
+- **Intelligence level (reasoning effort):** High.
+
 ## Live Demo
 
 **[Play Qbert Clone](https://samuelasherrivello.github.io/babylon-lite-qbert-clone/)** · [Latest release](https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone/releases/latest)
