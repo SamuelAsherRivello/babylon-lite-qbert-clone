@@ -1,12 +1,12 @@
 schema: spec-driven
 context: |
-  Repository: project-name.
-  This repository starts as a reusable template with no application
-  implementation, product decisions, or approved technology stack.
-  Canonical project documentation assets live in project-name/documentation/.
-  Before proposing or applying a change, record the project's verified purpose,
-  runtime targets, architecture, dependency policy, security constraints, and
-  validation commands here.
+  Qbert Clone is a single-screen portrait browser arcade game.
+  Repository babylon-lite-qbert-clone; application root qbert-clone; npm root here.
+  Use @babylonjs/lite and WebGPU with Vite and JavaScript. No backend or secrets.
+  Preserve Q*bert's isometric diagonal hopping and pyramid color-change rules.
+  Use original metallic art, keyboard and touch controls, and GitHub Pages.
+  Separate deterministic game rules from renderer and DOM controls.
+  Verify with npm test, npm run build, and browser play on desktop and mobile sizes.
 rules:
   proposal:
     - Mark unresolved decisions clearly; recommendations are not approvals.

@@ -1,94 +1,109 @@
-<!-- AI: Keep commands rooted at the repository. The Vite application, source, tests, and build output belong in project-name/. -->
-![Samuel Asher Rivello](project-name/documentation/samuel-asher-rivello-banner.png)
+![Samuel Asher Rivello](qbert-clone/documentation/samuel-asher-rivello-banner.png)
 
-# {project-name}
+# Qbert Clone
 
-<!-- AI: Update this project summary when the template is used. -->
-This is the project repo....
-
-## Images
-
-### Screenshots
-
-<a href="project-name/documentation/screenshot01.png"><img src="project-name/documentation/screenshot01.png" width="400" alt="Screenshot placeholder" /></a>
+A complete browser arcade game inspired by Q*bert, rebuilt as an original metal machine. Hop across a 28-tile pyramid, turn every top amber, dodge enemies and ride rescue discs back to the summit. Rendered with **Babylon Lite and WebGPU** in a fixed 9:16 portrait cabinet, surrounded by original metallic artwork.
 
 ## Live Demo
 
-- [{live-demo-url}](https://samuelasherrivello.github.io/github-repository-template/)
+**[Play Qbert Clone](https://samuelasherrivello.github.io/babylon-lite-qbert-clone/)** · [Latest release](https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone/releases/latest)
 
-## Table of Contents
+Use a current WebGPU-capable browser with hardware acceleration enabled. Chrome or Edge is recommended. The game reports unavailable graphics adapters and offers a retry; it does not silently substitute another renderer.
 
-1. [Images](#images)
-2. [Live Demo](#live-demo)
-3. [Getting Started](#getting-started)
-4. [Project Details](#project-details)
-5. [Credits](#credits)
+## Images
+
+[![Qbert Clone gameplay](qbert-clone/documentation/screenshot01.png)](qbert-clone/documentation/screenshot01.png)
+
+## How to Play
+
+| Hop | Keyboard | Virtual button |
+|---|---|---|
+| Upper left | W or ↑ | ↖ |
+| Upper right | D or → | ↗ |
+| Lower left | A or ← | ↙ |
+| Lower right | S or ↓ | ↘ |
+
+- Turn all **28 tile tops amber** to finish a round. Four rounds advance a level.
+- Level 1: one hop colors a tile. Level 2: two hops. Level 3: revisiting a completed tile reverts it. Later levels combine two-hop and reverting rules.
+- Red balls, purple eggs/coils and silver side climbers are dangerous. Eggs hatch into a snake that pursues you.
+- Catch green balls to freeze enemies for four seconds. Catch green gremlins for 300 points before they erase your tiles.
+- Hop outward from either blue disc at row five to return to the summit. Each disc works once per round; a pursuing coil is removed for 500 points.
+- Three starting lives; an extra life every 8,000 points. Falls and hostile collisions cost a life while preserving tile progress.
+- P or Escape pauses. Leaving the tab pauses automatically. Use the pause menu to restart.
+- Sound and best score save locally when browser storage is available. No account, tracking or backend.
+
+The controls follow the four diagonals of the original isometric board. This is a new implementation of the arcade rules with original visuals and synthesized audio, not a ROM emulator or exact historical timing reproduction.
 
 ## Getting Started
 
-<!-- AI: Update this getting-started summary when the template is used. -->
-This is the getting started...
+Run all commands from the repository root. Requires Node.js 24+ and npm.
 
-### 🛠 Build Project
+```sh
+npm ci
+npm run dev
+```
 
-1. From the repository root, run `npm install`.
-2. Run `npm run build`.
+Open the URL printed by Vite. The application lives under `qbert-clone/`; the npm project is at the repository root.
 
-### 🛠 Run Project
+```sh
+npm test             # deterministic game-rule tests
+npm run build       # production output: qbert-clone/dist
+npm run preview     # serve the production build
+```
 
-1. From the repository root, run `npm run dev` and open the localhost URL Vite prints.
-2. Run `npm test` to execute the focused source checks.
+Browser integration tests need a local server running and Playwright Chromium installed:
 
-### 🛠 Release Version
+```sh
+npx playwright install chromium
+npm run test:browser
+```
 
-1. Run `npm test` and `npm run build` from the repository root.
-2. Push to `main` to deploy through the GitHub Pages workflow.
-3. Run the **Release** workflow from GitHub Actions to bump the patch version, tag it, and create the GitHub release.
+They verify actual WebGPU initialization, input, pause, restart, scoring, persistent settings, touch, responsive layouts and the unsupported-GPU message. A graphics-capable test host is required. `TEST_URL` can point the same suite at a preview or the public demo. No formatting command is required.
 
 ## Project Details
 
-<!-- AI: Update these project details when the template is used. -->
-This is the project details...
+- `qbert-clone/src/game.js` — deterministic rules and state; no browser or GPU dependency.
+- `qbert-clone/src/renderer.js` — Babylon Lite scene, PBR materials, original procedural meshes, lighting and hop animation.
+- `qbert-clone/src/main.js` — DOM HUD, overlays, common keyboard/touch commands, synthesized sound and optional local storage.
+- `qbert-clone/src/style.css` — portrait cabinet, responsive gutters and template corner roles.
+- `qbert-clone/public/assets/` — local cabinet art and BRDF lookup; no runtime asset CDN.
+- `qbert-clone/test/` — rule and browser integration tests.
+- `openspec/` — exploration decisions, proposal, design, requirements and task tracking.
+- `.agents/skills/` — imported shared skills plus template OpenSpec helpers.
 
-### 📝 Structure
+### Release
 
-- `project-name/index.html` provides the plain safe-area HTML shell.
-- `project-name/test/` contains focused automated checks for the starter.
-- `project-name/documentation/` contains canonical README images and project
-  documentation assets.
+Pushing `main` deploys GitHub Pages after tests and a production build. The manually dispatched **Release** workflow installs dependencies, tests, builds, increments the patch in `version.txt`, commits and tags that version, creates a GitHub release, and dispatches a fresh Pages deployment. `version.txt` is the authoritative displayed/released version; the private npm package is not published.
 
-### 📦 AI
+```sh
+gh workflow run release.yml --ref main
+```
 
-- `AGENTS.md` contains repository-specific AI agent guidance.
-- `AGENTS_TEMPLATE_USAGE_CHECKLIST.md` contains the template reuse checklist.
-- [openspec](openspec/) contains the repository's specification workflow
-  configuration.
-
-### 📦 Packages
-
-- [Vite](https://vite.dev/) provides local development and production builds.
-
+Monitor the release and deployment runs, then pull `main` to obtain the bot's version commit. See [verification](qbert-clone/documentation/verification.md) and [asset/skill provenance](qbert-clone/documentation/provenance.md).
 
 ## Credits
 
-<!-- AI: Preserve established attribution and ownership. Customize the following subsections only from confirmed contributor, contact, and license information; do not infer a new owner from the repository name. -->
-### 💡 Contributors
+### Contributors
 
-<!-- AI: Preserve existing contributor credit and add contributors only when confirmed. Do not automatically advance experience counts or their reference year. -->
-- Samuel Asher Rivello - Over 25 years of game development XP (2026)
+- Samuel Asher Rivello — Over 25 years of game development XP (2026)
 
-### 💡 Contact
+### Contact
 
-<!-- AI: Preserve confirmed contact destinations and their order unless requested otherwise. Use readable display URLs without a protocol or trailing slash while keeping the real link target intact. Do not invent accounts or change target capitalization based on display styling. -->
-- [LinkedIn.com/in/SamuelAsherRivello](https://Linkedin.com/in/SamuelAsherRivello) ⭐ 
+- [LinkedIn.com/in/SamuelAsherRivello](https://Linkedin.com/in/SamuelAsherRivello) ⭐
 - [GitHub.com/SamuelAsherRivello](https://github.com/SamuelAsherRivello/)
 - [Twitter.com/srivello](https://twitter.com/srivello/)
 - Resume / Portfolio: [SamuelAsherRivello.com](http://www.SamuelAsherRivello.com)
 
+### Technology and inspiration
 
-### 💡 License
+- [Babylon Lite](https://github.com/BabylonJS/Babylon-Lite) — WebGPU engine, Apache-2.0; its BRDF lookup is included with attribution.
+- [Q*bert](https://en.wikipedia.org/wiki/Q*bert) — gameplay inspiration. Q*bert and its original characters are properties of their respective owners; this independent project has no affiliation or endorsement.
+- [Reference game](https://github.com/SamuelAsherRivello/babylon-light-stealth-grid) — portrait framing inspiration.
 
-<!-- AI: Keep the license name linked to the actual relative license file and verify that its terms match this statement. Keep the copyright holder and year consistent with that file. Do not change license terms, ownership, or dates without an explicit request. -->
-- Provided as-is under the [MIT License](LICENSE).
+### License
 
-- Copyright © 2026 Rivello Multimedia Consulting, LLC.
+Provided as-is under the [MIT License](LICENSE).
+
+Copyright © 2026 Rivello Multimedia Consulting, LLC.
+
+Third-party materials and imported skills retain their original terms; see provenance.
