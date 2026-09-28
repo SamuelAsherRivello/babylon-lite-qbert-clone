@@ -15,4 +15,18 @@ Local verification on 2026-09-28:
 
 Browser tests use the full Chromium channel. The headless-shell/software-backend attempt could not obtain a WebGPU adapter; full Chromium successfully used WebGPU. Hardware support remains browser/device dependent.
 
-Publication evidence is added after the release and live verification finish.
+Release and public-runtime verification are recorded below.
+
+## Published release
+
+- Repository: https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone
+- Demo: https://samuelasherrivello.github.io/babylon-lite-qbert-clone/
+- Release: https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone/releases/tag/v0.1.1
+- Release commit: 2a0862d (tag v0.1.1); contains the complete game implementation.
+- Release workflow: https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone/actions/runs/36410691234 — success.
+- Release Pages deployment: https://github.com/SamuelAsherRivello/babylon-lite-qbert-clone/actions/runs/36410742462 — success.
+- Full browser suite passed against the public HTTPS demo on 2026-09-28, using the same desktop/mobile/input/persistence checks as the local production preview.
+- Public demo also opened and rendered in the Codex in-app browser with WEBGPU ONLINE and v0.1.1 visible.
+- Canonical screenshot refreshed from the public v0.1.1 demo.
+- Post-release changes are documentation/spec archival only; runtime source matches v0.1.1.
+

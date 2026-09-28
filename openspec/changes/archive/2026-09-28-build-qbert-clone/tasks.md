@@ -10,5 +10,6 @@
 ## 3. Delivery
 - [x] 3.1 Document controls, provenance, setup and release; capture current screenshot and verify links.
 - [x] 3.2 Run rule and browser tests plus production build; verify unsupported GPU behavior.
-- [ ] 3.3 Publish Pages and a tagged release; verify live input, version and clean synchronized checkout.
+- [x] 3.3 Publish Pages and a tagged release; verify live input, version and clean synchronized checkout.
+
 
