@@ -11,3 +11,6 @@ node_modules/
 
 /qbert-clone/dist/
 /test-results/
+
+/debug.log
+
