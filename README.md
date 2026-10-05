@@ -57,6 +57,12 @@ Use a current WebGPU-capable browser with hardware acceleration enabled. Chrome 
 
 [![Qbert Clone gameplay](qbert-clone/documentation/screenshot01.png)](qbert-clone/documentation/screenshot01.png)
 
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Project Details](#project-details)
+3. [Credits](#credits)
+
 ## How to Play
 
 | Hop | Keyboard | Virtual button |
